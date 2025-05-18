@@ -127,7 +127,7 @@ export default function Terms() {
           </div>
 
           <div className="mt-12 text-sm text-slate-500">
-            <p>Last Updated: May 19, 2025</p>
+            <p>Last Updated: May 19, 2023</p>
           </div>
         </motion.div>
       </div>

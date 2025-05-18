@@ -13,9 +13,9 @@ export default function WhatsAppWidget() {
 
     // Initialize the widget after script loads
     script.onload = () => {
-      // @ts-ignore
+      // @ts-expect-error - WhatsAppWidget is loaded from external script
       if (window.WhatsAppWidget) {
-        // @ts-ignore
+        // @ts-expect-error - WhatsAppWidget is loaded from external script
         window.WhatsAppWidget.init({
           phoneNumber: "+442012345678",
           welcomeMessage: "Hello! How can we help you today?",
