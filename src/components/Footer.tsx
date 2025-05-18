@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navigation = {
   solutions: [
@@ -9,6 +10,7 @@ const navigation = {
   company: [
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
   ],
   social: [
     {
@@ -34,6 +36,14 @@ const navigation = {
       ),
     },
   ],
+  contact: [
+    { label: "Phone", value: "+44 20 1234 5678" },
+    { label: "Email", value: "contact@roxate.com" },
+    { 
+      label: "Address", 
+      value: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom" 
+    },
+  ],
 };
 
 export function Footer() {
@@ -45,13 +55,27 @@ export function Footer() {
       <div className="container py-12 lg:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Link href="/" className="text-2xl font-bold text-white">
-              Roxate
+            <Link href="/" className="flex items-center gap-2">
+              <Image 
+                src="/roxate-logo.png" 
+                alt="Roxate Logo" 
+                width={40} 
+                height={40} 
+                className="w-10 h-10"
+              />
+              <span className="text-2xl font-bold text-white">Roxate</span>
             </Link>
-            <p className="text-primary-300 text-sm">
-              Empowering businesses across the Middle East with innovative AI
-              solutions.
-            </p>
+            <div className="space-y-2">
+              <p className="text-primary-300 text-sm font-medium">
+                Roxate Ltd.
+              </p>
+              <p className="text-primary-300 text-sm">
+                AI Consulting & Implementation Company
+              </p>
+              <p className="text-primary-300 text-sm">
+                UK Registered Company No. 12345678
+              </p>
+            </div>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
                 <Link
@@ -65,42 +89,63 @@ export function Footer() {
               ))}
             </div>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div>
-              <h3 className="text-sm font-semibold text-white">Solutions</h3>
-              <ul role="list" className="mt-4 space-y-4">
-                {navigation.solutions.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-sm text-primary-300 hover:text-white"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-primary-200">
+                  Solutions
+                </h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {navigation.solutions.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="text-base text-primary-300 hover:text-white"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-12 md:mt-0">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-primary-200">
+                  Company
+                </h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {navigation.company.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="text-base text-primary-300 hover:text-white"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-white">Company</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-primary-200">
+                Contact Us
+              </h3>
               <ul role="list" className="mt-4 space-y-4">
-                {navigation.company.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-sm text-primary-300 hover:text-white"
-                    >
-                      {item.name}
-                    </Link>
+                {navigation.contact.map((item) => (
+                  <li key={item.label} className="text-primary-300">
+                    <div className="flex flex-col">
+                      <span className="font-medium">{item.label}:</span> 
+                      <span>{item.value}</span>
+                    </div>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-primary-800 pt-8">
-          <p className="text-sm text-primary-400 xl:text-center">
-            &copy; {new Date().getFullYear()} Roxate. All rights reserved.
+        <div className="mt-12 border-t border-primary-700 pt-8">
+          <p className="text-base text-primary-400 xl:text-center">
+            &copy; {new Date().getFullYear()} Roxate Ltd. All rights reserved.
           </p>
         </div>
       </div>

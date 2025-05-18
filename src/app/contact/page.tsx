@@ -7,7 +7,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 const contactInfo = [
   {
     label: "Email",
-    value: "contact@roxate.com",
+    value: "infot@roxate.com",
     icon: (props: React.ComponentProps<"svg">) => (
       <svg
         fill="none"
