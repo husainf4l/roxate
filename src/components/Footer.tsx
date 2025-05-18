@@ -11,6 +11,7 @@ const navigation = {
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
     { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms of Use", href: "/terms" },
   ],
   social: [
     {
@@ -26,22 +27,14 @@ const navigation = {
         </svg>
       ),
     },
-    {
-      name: "Twitter",
-      href: "#",
-      icon: (props: React.ComponentProps<"svg">) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-        </svg>
-      ),
-    },
   ],
   contact: [
-    { label: "Phone", value: "+44 20 1234 5678" },
-    { label: "Email", value: "contact@roxate.com" },
-    { 
-      label: "Address", 
-      value: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom" 
+    { label: "Phone", value: "+447822015226" },
+    { label: "Email", value: "info@roxate.com" },
+    {
+      label: "Address",
+      value:
+        "71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ",
     },
   ],
 };
@@ -55,25 +48,13 @@ export function Footer() {
       <div className="container py-12 lg:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Link href="/" className="flex items-center gap-2">
-              <Image 
-                src="/roxate-logo.png" 
-                alt="Roxate Logo" 
-                width={40} 
-                height={40} 
-                className="w-10 h-10"
-              />
-              <span className="text-2xl font-bold text-white">Roxate</span>
-            </Link>
             <div className="space-y-2">
-              <p className="text-primary-300 text-sm font-medium">
-                Roxate Ltd.
-              </p>
+              <p className="text-primary-300 text-sm font-medium">ROXATE LTD</p>
               <p className="text-primary-300 text-sm">
                 AI Consulting & Implementation Company
               </p>
               <p className="text-primary-300 text-sm">
-                UK Registered Company No. 12345678
+                UK Registered Company No. 16232608
               </p>
             </div>
             <div className="flex space-x-6">
@@ -134,7 +115,7 @@ export function Footer() {
                 {navigation.contact.map((item) => (
                   <li key={item.label} className="text-primary-300">
                     <div className="flex flex-col">
-                      <span className="font-medium">{item.label}:</span> 
+                      <span className="font-medium">{item.label}:</span>
                       <span>{item.value}</span>
                     </div>
                   </li>
@@ -144,9 +125,25 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-primary-700 pt-8">
-          <p className="text-base text-primary-400 xl:text-center">
-            &copy; {new Date().getFullYear()} Roxate Ltd. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+            <p className="text-base text-primary-400">
+              &copy; {new Date().getFullYear()} ROXATE LTD. All rights reserved.
+            </p>
+            <div className="mt-4 md:mt-0 flex items-center">
+              <span className="text-sm text-primary-400 mr-2">Secure site</span>
+              <svg
+                className="h-5 w-5 text-green-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -19,9 +19,9 @@ export function Navbar() {
       <nav className="container h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <img
-            src="/roxate-logo-web"
+            src="/roxate-logo.png"
             alt="Roxate Logo"
-            className="h-8 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 

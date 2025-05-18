@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export function ContactForm() {
   const [status, setStatus] = useState<
@@ -89,6 +90,36 @@ export function ContactForm() {
           className="mt-2 block w-full rounded-lg border border-primary-200 px-4 py-2 text-primary-900 placeholder-primary-400 focus:border-accent-500 focus:ring-accent-500"
           placeholder="How can we help you?"
         />
+      </div>
+
+      <div className="mt-4">
+        <div className="flex items-start">
+          <div className="flex h-5 items-center">
+            <input
+              id="whatsapp-opt-in"
+              name="whatsapp-opt-in"
+              type="checkbox"
+              className="h-4 w-4 rounded border-primary-300 text-accent-600 focus:ring-accent-500"
+              required
+            />
+          </div>
+          <div className="ml-3 text-sm">
+            <label htmlFor="whatsapp-opt-in" className="text-primary-600">
+              I agree to be contacted via WhatsApp for updates and support from
+              Roxate.
+            </label>
+            <p className="text-primary-500 mt-1">
+              See our{" "}
+              <Link
+                href="/privacy-policy"
+                className="text-accent-600 hover:underline"
+              >
+                Privacy Policy
+              </Link>{" "}
+              for how we handle your data.
+            </p>
+          </div>
+        </div>
       </div>
 
       <button
